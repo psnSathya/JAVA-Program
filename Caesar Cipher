@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        String words[]=str.split(" ");
+        for(String word:words){
+        int rot=word.length();
+        String result="";
+        for(char ch:word.toCharArray())
+        {
+            if(Character.isLetter(ch)){
+           char base=(Character.isUpperCase(ch))?'A':'a';
+           char shift=(char)((ch-base+rot)%26+base);
+           result+=shift;
+        }
+       } System.out.print(result+" ");
+    }} }
